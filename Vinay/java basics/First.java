@@ -4,6 +4,8 @@ public class First{
         System.out.println(fib(4));
     }
     System.out.println(reverse(1534236469));
+
+    switchCase("Grape");
         
     }
     public static int fib(int n) {
@@ -41,6 +43,7 @@ public class First{
         while(temp>0){
             if ((x >= 0 && ans > Integer.MAX_VALUE / 10) || (x < 0 && -ans < Integer.MIN_VALUE / 10)) {
                 return 0;
+            }
             int rem=temp%10;
             ans=ans*10;
             ans=ans+rem;
@@ -51,4 +54,23 @@ public class First{
         }
         return ans;
     }
+
+
+    public static void switchCase(String fruit){
+        switch(fruit){
+            case "Apple":
+                System.out.println("this is apple");
+                break;
+            case "Mango":
+                System.out.println("this is Mango");
+                break;
+            case "Grape":
+                System.out.println("this is Grape");
+                break;
+            default:
+                System.out.println("please enter valid input");
+        }
+    }
+
+
 }   
