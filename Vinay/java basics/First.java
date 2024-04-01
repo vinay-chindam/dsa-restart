@@ -1,11 +1,12 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class First{
     public static void main(String[] args) {
-    for (int i = 0; i < 10; i++) {
-        System.out.println(fib(4));
-    }
-    System.out.println(reverse(1534236469));
-
-    switchCase("Grape");
+    
+        int [] arr=new int[5];
+        initArray(arr);
+        System.out.println(Arrays.toString(arr));
         
     }
     public static int fib(int n) {
@@ -73,4 +74,29 @@ public class First{
     }
 
 
+
+    
+    public static boolean isPrime(int n){
+        if(n<=1){
+            return false;
+        }
+        for (int i = 2; i*i < n; i++) {
+            if(n%i==0 ){
+                return false;
+            }
+            
+        }
+        return true;
+    }
+
+    public static void initArray(int [] arr){
+        Scanner in=new Scanner(System.in);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]=in.nextInt();
+            
+        }
+        
+    }
+
+    
 }   
