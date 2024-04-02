@@ -70,12 +70,7 @@ public class recursion {
         }
         func5(i+1,n);
         System.out.println(i);
-        
-        
-        
     }
-    
-
     public static int sumrec(int i,int n,int sum){
         if(i>n){
             return sum;
@@ -89,7 +84,6 @@ public class recursion {
         }
         return i+sumrec2(i-1);
     }
-
     public static int fact(int i){
         if(i==0 || i==1){
             return 1;
