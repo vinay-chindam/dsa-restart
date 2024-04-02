@@ -3,3 +3,13 @@ day 1: intro to java
 day 2:conditional statements
         loops
         functions
+
+day 3: recursions basics
+        factorial
+        sum of n natural
+        fibonacci
+
+day 4: recursion patterns
+        subsequences
+        subsequence sum
+        
