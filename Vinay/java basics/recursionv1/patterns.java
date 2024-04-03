@@ -1,6 +1,7 @@
 package recursionv1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class patterns {
 
@@ -10,6 +11,9 @@ public class patterns {
        ArrayList<Integer> temp=new ArrayList<>();
        subsequencesumK(0, ans, arr,temp,0,3);
        System.out.println(ans);
+       char [] s={'a','v','d'};
+       reverseString(s, 0, s.length-1);
+       System.out.println(Arrays.toString(s));
     }
     public static void subsequence1(int index,ArrayList<Integer> temp,int [] arr){
         if(index==arr.length){
@@ -51,4 +55,14 @@ public class patterns {
         subsequencesumK(index+1, ans, arr, temp,sum,k);
     }
     
+
+    public static void reverseString(char [] s,int st,int end){
+        if(st>=end){
+            return;
+        }
+        char temp=s[st];
+        s[st]=s[end];
+        s[end]=temp;
+        reverseString(s, st+1, end-1);
+    }
 }
