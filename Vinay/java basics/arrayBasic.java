@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class arrayBasic {
 
@@ -176,4 +179,55 @@ public class arrayBasic {
     
             
         }
+
+        public static void rotate(int[][] matrix) {
+
+            int n=matrix.length;
+            for (int i=0;i<n;i++){
+                for (int j=i;j<n;j++){
+                    int temp=matrix[i][j];
+                    matrix[i][j]=matrix[j][i];
+                    matrix[j][i]=temp;
+                }
+            }
+            int i=0;
+            while(i<n){
+                int st=0;
+                int end=n-1;
+    
+                while(st<=end){
+                    int temp=matrix[i][st];
+                    matrix[i][st]=matrix[i][end];
+                    matrix[i][end]=temp;
+                    st++;
+                    end--;
+                }
+                i++;
+            }
+            int st=0;
+            int end=n-1;
+            
+            
+            
+        }
+
+        public static List< Integer > superiorElements(int []a) {
+        // Write your code here.
+        ArrayList<Integer> ans=new ArrayList<>();
+        int n=a.length;
+        
+        int sup=a[n-1];
+        ans.add(sup);
+
+        for(int i=n-2;i>=0;i--){
+            if(a[i]>sup){
+                sup=a[i];
+                ans.add(sup);
+            }
+
+        }
+       
+        Collections.sort(ans);
+        return ans;
+    }
 }
