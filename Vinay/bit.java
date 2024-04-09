@@ -1,4 +1,5 @@
 package Vinay;
+import java.util.*;
 
 public class bit {
     public static void main(String[] args) {
@@ -150,6 +151,19 @@ public class bit {
         }
         
         return ans;
+    }
+
+    public static int power(int a,int b){
+        if(b==1){
+            return a;
+        }
+
+        if(b%2==0){
+            return power(a,b/2)*power(a,b/2);
+        }
+        else{
+            return a*power(a,b/2)*power(a,b/2);
+        }
     }
     
 }
