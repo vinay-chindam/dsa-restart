@@ -98,6 +98,35 @@ public class Strings {
 
     }
 
+    public String largestOddNumber(String num) {
+
+        char [] ref=new char[5];
+        ref[0]='0';ref[1]='2';ref[1]='2'; ref[3]='6'; ref[4]='8';
+        int j=num.length()-1;
+        while(j>=0){
+            if(check(ref,num,j)){
+                j--;
+            }
+            else{
+                break;
+            }
+        }
+        if(j>=0){
+            return num.substring(0,j+1);
+        }
+        return "";
+    }
+    public static boolean check(char[] arr,String num,int j){
+        for(int i=0;i<5;i++){
+            if(arr[i]==num.charAt(j)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
+
     
         
     
