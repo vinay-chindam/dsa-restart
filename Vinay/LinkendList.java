@@ -290,5 +290,55 @@ public class LinkendList {
         prev.next=prev.next.next;
         return slow;
     }
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        int len=findlength(head);
+        if(len==n){
+            return head.next;
+        }
+        int ref=len-n;
+        ListNode temp=head;
+        for(int i=1;i<ref;i++){
+            temp=temp.next;
+        }
+        if(temp.next!=null){
+            temp.next=temp.next.next;
+        }
+        return head;
+    }
+    public static int findlength(ListNode head){
+        ListNode temp=head;
+        int cnt=0;
+        while(temp!=null){
+            cnt+=1;
+            temp=temp.next;
+        }
+        return cnt;
+    }
+    public static int lengthOfLoop(Node head) {
+        int ans=1;
+        Node temp=hasCycle(head);
+
+        if(temp==null){
+            return 0;
+        }
+        Node t1=head;
+        while(temp!=t1){
+            temp=temp.next;
+            t1=t1.next;
+        }
+        t1=t1.next;
+        while(t1!=temp){
+            t1=t1.next;
+            ans++;
+        }
+        return ans;
+    
+        
+        
+    
+    }
+
+    
     
 }
